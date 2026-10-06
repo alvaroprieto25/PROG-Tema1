@@ -4,17 +4,25 @@
  */
 package com.mycompany.tema.prog;
 
+import java.util.Scanner;
+
 /**
  *
  * @author apm25
  */
 public class EjerciciosClase {
     public static void main(){
+        Scanner sc = new Scanner(System.in);
         //ejercicio1();
         //ejercicio2();
         //ejercicio4();
         //ejercicio5();
-        ejercicio6();
+        //ejercicio6();
+        //ejercicio7();
+        //ejercicio8();
+        //ejercicio9(sc);
+        //ejercicio10(sc);
+        ejercicio11(sc);
     }
     
     public static void ejercicio1() {
@@ -100,5 +108,69 @@ public class EjerciciosClase {
         }
         
         System.out.println(esBisiesto ? "El any es de siesta" : "El any no es de siesta");
+    }
+    
+    public static void ejercicio7(){
+        String cadena = "%-15s | %5d | %8.2f %n";
+        System.out.printf("%-15s | %5s | %8s %n", "Nombre", "Uni", "Precio");
+        System.out.printf("----------------------------------- %n");
+        System.out.printf(cadena, "Champu", 8, 12.5f);
+        System.out.printf(cadena, "Jabon de manos", 3, 7.2f);
+        System.out.printf(cadena, "C. hidratante", 7, 10.99f);
+        System.out.printf(cadena, "Toalla", 1, 20.0f);
+        System.out.printf("----------------------------------- %n");
+    }
+    
+    public static void ejercicio8(){
+        System.out.println("MENU DE OPCIONES:\n1. Archivo \"nuevo\"\n2. Ruta: C\\\\Archivos\\\\Java\n3. Salir");
+    }
+    
+    public static void ejercicio9(Scanner sc){
+        System.out.print("Edad del usuario: ");
+        int edadUsuario = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Nombre del usuario: ");
+        String nombreUsuario = sc.nextLine();
+        
+        System.out.println("Usuario: " + nombreUsuario + " Edad: " + edadUsuario);
+        
+    }
+    
+    public static void ejercicio10(Scanner sc){
+        System.out.print("Introduce tu edad: ");
+        int edad = sc.nextInt();
+        System.out.print("Introduce tu salario: ");
+        double salario = sc.nextDouble();
+        
+        if((edad < 25 && salario < 900f) || edad < 18){
+            System.out.println("Se te concede la beca");
+        } else {
+            System.out.println("No se te concede la beca, burgues!");
+        }
+    }
+    
+    public static void ejercicio11(Scanner sc){
+        System.out.print("Introduce tu nota: ");
+        float nota = sc.nextFloat();
+        
+        switch((int)nota) {
+            case 0, 1, 2, 3, 4:
+                    System.out.println("Insuficiente");
+                    break;
+            case 5:
+                   System.out.println("Suficiente");
+                   break;
+            case 6:
+                    System.out.println("Bien");
+                    break;
+            case 7, 8:
+                    System.out.println("Notable");
+                    break;
+            case 9, 10:
+                    System.out.println("Sobresaliente");
+                    break;
+            default:
+                    System.out.println("Fuera de rango");           
+        }
     }
 }
