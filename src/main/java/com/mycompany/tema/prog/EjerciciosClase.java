@@ -91,7 +91,7 @@ public class EjerciciosClase {
     }
     
     public static void ejercicio6(){
-        int anio = 12346;
+        int anio = 1234;
         boolean esBisiesto = ((anio%4 == 0 && anio%100 != 0) || anio%400 == 0);
         
         //Con condicional
@@ -101,11 +101,13 @@ public class EjerciciosClase {
         //La tercera: Si el año al dividirlo entre 400 da resto 0.
         //Ojo a los condicionales y las puertas logicas
         // ((condicion1 && condicion2) || condicion3)
+        
         if((anio%4 == 0 && anio%100 != 0) || anio%400 == 0){
             System.out.println("El any es de siesta");
         } else {
             System.out.println("El any no es de siesta");
         }
+        
         
         System.out.println(esBisiesto ? "El any es de siesta" : "El any no es de siesta");
     }
@@ -172,5 +174,70 @@ public class EjerciciosClase {
             default:
                     System.out.println("Fuera de rango");           
         }
+    }
+    
+    public static void ejercicio12(Scanner sc){
+        System.out.print("Introduce la temperatura: ");
+        int temperatura = sc.nextInt();
+        String estado = temperatura > 30 ? "calor" : "normal";
+        System.out.println(estado);
+    }
+    
+    public static void ejercicio13(Scanner sc){
+        System.out.print("Introduce un numero del 1 al 7: ");
+        int dia = sc.nextInt();
+        switch(dia){
+            case 1: 
+                System.out.println("Lunes");
+                break;
+            case 2: 
+                System.out.println("Martes");
+                break;
+            case 3: 
+                System.out.println("Miercoles");
+                break;
+            case 4: 
+                System.out.println("Jueves");
+                break;
+            case 5: 
+                System.out.println("Viernes");
+                break;
+            case 6: 
+                System.out.println("Sabado");
+                System.out.println("Fin de semana");
+                break;
+            case 7: 
+                System.out.println("Domingo");
+                System.out.println("Fin de semana");
+                break;
+            default:
+                System.out.println("Dia no valido");
+        }
+    }
+    
+    public static void ejercicio14(Scanner sc){
+        System.out.print("Introduce un numero de mes (1 a 12): ");
+        int mes = sc.nextInt();
+        System.out.print("Introduce un numero de anio: ");
+        int anio = sc.nextInt();
+        boolean esBisiesto = ((anio%4 == 0 && anio%100 != 0) || anio%400 == 0);
+        switch(mes){
+            case 1, 3, 5, 7, 8, 10, 12:
+                System.out.println("El mes tiene 31 dias");
+                break;
+            case 4, 6, 9, 11:
+                System.out.println("El mes tiene 30 dias");
+                break;
+            case 2:
+                System.out.println(esBisiesto ? "El mes tiene 28 dias" : "El mes tiene 29 dias");
+                break;
+            default: 
+                System.out.println("No es un mes, no te he dicho que debe ser entre 1 y 12?");
+        }
+    }
+    
+    
+    public static void ejercicioClase(){
+        
     }
 }
