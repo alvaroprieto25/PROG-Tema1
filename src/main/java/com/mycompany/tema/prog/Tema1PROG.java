@@ -4,7 +4,7 @@
 
 package com.mycompany.tema.prog;
 
-import entornos.CalculadoraEmpresarial;
+import es.ies.entornos.unidad2.CalculadoraEmpresarial;
 
 /**
  *

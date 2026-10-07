@@ -22,7 +22,9 @@ public class EjerciciosClase {
         //ejercicio8();
         //ejercicio9(sc);
         //ejercicio10(sc);
-        ejercicio11(sc);
+        //ejercicio11(sc);
+        
+        ejercicioClase(sc);
     }
     
     public static void ejercicio1() {
@@ -237,7 +239,56 @@ public class EjerciciosClase {
     }
     
     
-    public static void ejercicioClase(){
+    public static void ejercicioClase(Scanner sc){
+        String dia;
+        char vip;
+        int edad;
+        boolean esVIP;
         
+        System.out.print("Dia de la semana (minusculas sin acentos): ");
+        dia = sc.nextLine();
+        System.out.print("Introduce tu edad: ");
+        edad = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Eres VIP (S/N): ");
+        vip = sc.nextLine().charAt(0);
+        
+        esVIP = (vip == 'S' || vip == 's') ? true : false;
+        
+        float precio;
+        
+        switch(dia){
+            case "lunes", "jueves", "viernes":
+                precio = 10f;
+                break;
+            case "miercoles":
+                precio = 5f;
+                break;
+            case "martes":
+                precio = 8f;
+                break;
+            case "sabado", "domingo":
+                precio = 12f;
+                break;
+            default:
+                precio = 10;
+                System.out.println("Ese no es un dia de la semana");
+        }
+        
+        if(edad < 12) {
+            precio = precio * 0.8f;
+        }
+        
+        if(edad >= 85){
+            precio = precio * 0.5f;
+        } else if(edad >= 65){
+            precio = precio * 0.7f;
+        }
+        
+        if(esVIP){
+            precio = precio * 0.9f;
+        }
+        
+        System.out.println("El precio de la entrada es: " + precio);
     }
 }
