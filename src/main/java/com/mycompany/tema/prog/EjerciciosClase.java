@@ -23,8 +23,8 @@ public class EjerciciosClase {
         //ejercicio9(sc);
         //ejercicio10(sc);
         //ejercicio11(sc);
-        
-        ejercicioClase(sc);
+        //ejercicioClase2(sc);
+        ejercicio15(sc);
     }
     
     public static void ejercicio1() {
@@ -294,5 +294,95 @@ public class EjerciciosClase {
     
     public static boolean esPar(int num){
         return num%2 == 0;
+    }
+    
+    public static void ejercicioClase2(Scanner sc){
+        //Pedimos 3 numeros
+        //Cual es el mayor y cual es el menor
+        System.out.print("Introduce el numero 1: ");
+        int num1 = sc.nextInt();
+        System.out.print("Introduce el numero 2: ");
+        int num2 = sc.nextInt();
+        System.out.print("Introduce el numero 3: ");
+        int num3 = sc.nextInt();
+        
+        if(num1 < num2 && num1 < num3){
+            System.out.println("El primer numero es el menor");
+        } else if(num2 < num2 && num2 < num3) {
+            System.out.println("El segundo numero es el menor");
+        } else {
+            System.out.println("El tercer numero es el menor");
+        }
+        
+        if(num1 > num2 && num1 > num3){
+            System.out.println("El primer numero es el mayor");
+        } else if(num2 > num2 && num2 > num3) {
+            System.out.println("El segundo numero es el mayor");
+        } else {
+            System.out.println("El tercer numero es el mayor");
+        }
+    }
+    
+    
+    //SEAN USTEDES BIENVENIDOS AL MUNDO DE LOS BUCLES
+    public static void explicacionBucleWhile(){
+        //Bucle num 1
+        //while
+        int repeticiones = 0;
+        boolean bucle = true;
+        
+        //¿Que condiciones puede ir dentro de un while?
+        // Respuesta: Las mismas que un IF
+        int num = 3;
+        while(num > 0){
+            //desde aqui
+            
+            /*
+            //Como incremento un valor (todas ellas suma 1)
+            //forma 1
+            num = num + 5;
+            //forma 2
+            num += 5;
+            //forma 3
+            num++;
+            
+            num = num -1;
+            
+            num -= 1;
+            
+            num--;
+            
+            
+            num = num * 2;
+            num *= 2;
+            
+            num = num / 2;
+            num /= 2;
+            */
+            
+            
+            num = num - 1;
+            System.out.println("hola");
+            
+            //hasta aqui
+        }    
+    }
+    public static void ejercicio15(Scanner sc){
+        int numero;
+        System.out.print("Introduce el numero: ");
+        numero = sc.nextInt();
+        int numerosPositivos = 0;
+        int suma = 0;
+        
+        while(numero > 0){
+            numerosPositivos++;
+            suma += numero;
+            
+            System.out.print("Introduce el numero: ");
+            numero = sc.nextInt();
+        }
+        
+        System.out.println("Numero de enteros: " + numerosPositivos);
+        System.out.println("Suma total: " + suma);
     }
 }
