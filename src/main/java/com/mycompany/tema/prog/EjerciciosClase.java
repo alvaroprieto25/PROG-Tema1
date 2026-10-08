@@ -291,4 +291,8 @@ public class EjerciciosClase {
         
         System.out.println("El precio de la entrada es: " + precio);
     }
+    
+    public static boolean esPar(int num){
+        return num%2 == 0;
+    }
 }
