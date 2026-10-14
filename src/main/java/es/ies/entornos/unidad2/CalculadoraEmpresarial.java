@@ -13,7 +13,7 @@ public class CalculadoraEmpresarial {
      * ¿Que hace el metodo?
      * @param args parametro para los argumentos de entrada
      */
-    public static void main(String args[]){
+    public static void main(String[] args){
         double[] precios = {12.50, 10.66, 8.63};
         
         for(int i = 0; i < precios.length; i++){

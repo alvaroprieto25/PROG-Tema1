@@ -24,7 +24,9 @@ public class EjerciciosClase {
         //ejercicio10(sc);
         //ejercicio11(sc);
         //ejercicioClase2(sc);
-        ejercicio15(sc);
+        //ejercicio16(sc);
+        //ejercicio17(sc);
+        ejercicio18(sc);
     }
     
     public static void ejercicio1() {
@@ -384,5 +386,122 @@ public class EjerciciosClase {
         
         System.out.println("Numero de enteros: " + numerosPositivos);
         System.out.println("Suma total: " + suma);
+    }
+    
+    public static void ejercicio16(Scanner sc){
+        int operacion;
+        //Inicio el do while
+        do {
+            System.out.println("--------------------");
+            System.out.println("1. Sumar");
+            System.out.println("2. Restar");
+            System.out.println("3. Multiplicar");
+            System.out.println("4. Salir");
+            System.out.println("--------------------");
+            System.out.print("Introduce la opracion a realizar: ");
+            operacion = sc.nextInt();
+            
+            if(operacion != 4) {
+                //Pido los datos
+                System.out.print("Introduce un numero: ");
+                int num = sc.nextInt();
+                System.out.print("Introduce un segundo numero: ");
+                int num2 = sc.nextInt();
+
+                //Realizar la operacion
+                switch(operacion) {
+                    case 1: 
+                        System.out.println("El resultado es: " + (num + num2));
+                        break;
+                    case 2:
+                        System.out.println("El resultado es: " + (num - num2));
+                        break;
+                    case 3: 
+                        System.out.println("El resultado es: " + (num * num2));
+                        break;
+                    default:
+                        System.out.println("Operacion invalida");
+                }
+            }
+            
+            //Condicion del do while
+        } while(operacion != 4);
+    }
+    
+    // Hacer un bucle (do-while) que no pare de pedir 
+    // numeros siempre y cuando el numero introducido sea par.
+    public static void ejercicioClase3(Scanner sc){
+        int num;
+        do{
+            System.out.print("Introduce un numero: ");
+            num = sc.nextInt();
+        } while(num % 2 == 0);
+    }
+    
+    public static void ejercicio17(Scanner sc){
+    
+        System.out.println("-- TABLAS DE MULTIPLICAR --");
+        System.out.print("Introduce un numero: ");
+        int numero = sc.nextInt();
+        // TABLA DE MULTIPLICAR
+        System.out.println("-- Tabla del " + numero + " --");
+        for(int i = 1; i <= 10; i++){
+            System.out.println(numero + " X " + i + " = " + (numero * i));
+        }
+  
+        // FACTORIAL
+        // Pensamientos de un programador, by Álvaro :)
+        // ¿En que valor empieza la i?
+        // ¿Hasta que valor llega la i?
+        // ¿Como incrementa la i?
+        int fact = 1;
+        System.out.println("-- FACTORIAL DE " + numero + " --");
+        for(int i = 2; i <= numero; i++){
+            System.out.println(fact + " X " + i + " = " + (fact * i));
+            fact = fact * i;
+        }  
+    }
+    
+    // ANIDACIÓN DE BUCLES
+    public static void ejercicio18(Scanner sc){
+        System.out.print("Introduce el tamaño: ");
+        int tamano = sc.nextInt();
+        
+        //Triangulo normal
+        for(int i = 0; i < tamano; i++){ // Apertura del primer for
+            for(int j = 0; j <= i; j++) { // Apertura del segundo for
+                //System.out.print("(" + i + "," + j + ")");
+                System.out.print("*");
+            } // Llave de cierre del segundo for
+            System.out.println(""); //Salto de linea
+        } //Llave de cierre del primer for
+        
+        System.out.println("");
+        
+        //Triangulo invertido
+        for(int i = tamano; i > 0; i--){
+            for(int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+        
+        System.out.println("");
+        
+        //Triangulo para el otro lado
+        for(int i = 0; i < tamano; i++) {
+            for(int j = 0; j < tamano; j++) {
+                // Pista
+                if(j < i){
+                    System.out.print(" ");
+                } else {
+                    System.out.print("*");
+                }
+            }
+            System.out.println("");
+        }
+        
+        //Triangulo para el otro lado invertido
+        
     }
 }
