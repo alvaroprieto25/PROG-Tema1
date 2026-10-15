@@ -18,6 +18,7 @@ public class Tema1PROG {
      */
     public static void main(String[] args) {
         EjerciciosClase.main();
+        EjerciciosBucles.main();
         //CalculadoraEmpresarial.main(args);
     }
  
