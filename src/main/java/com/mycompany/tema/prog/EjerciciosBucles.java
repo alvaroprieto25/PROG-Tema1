@@ -20,7 +20,7 @@ public class EjerciciosBucles {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
         //ejercicio3(sc, rand);
-        ejercicio9(sc);
+        ejercicio10(sc);
     }
     
     public static void ejercicio1(Scanner sc){
@@ -121,5 +121,42 @@ public class EjerciciosBucles {
             next = resultado - next;
             System.out.print(i != digitos-1 ? (resultado + ", ") : (resultado));
         }
+    }
+    
+    public static void ejercicio10(Scanner sc){
+        double saldo = 1000;
+        int opcion;
+        do {
+            System.out.println("1. Consultar Saldo\n2. Igresar Dinero\n3. RetirarDinero\n4. Salir");
+            System.out.print("Introduce la opcion(1,2,3,4): ");
+            opcion = sc.nextInt();
+            
+            switch(opcion){
+                case 1:
+                    System.out.println("Saldo actual " + saldo);
+                    break;
+                case 2:
+                    System.out.print("Introduce la cantidad a ingresar: ");
+                    double ingreso = sc.nextDouble();
+                    if(ingreso > 0)
+                        saldo += ingreso;
+                    else
+                        System.out.println("El ingreso debe tener un valor positivo!");
+                    break;
+                case 3:
+                    System.out.print("Introduce la cantidad a retirar: ");
+                    double retirada = sc.nextDouble();
+                    if(retirada > 0 && retirada <= saldo)
+                        saldo -= retirada;
+                    else
+                        System.out.println("No se puede retirar esa cantidad.");
+                    break;
+                case 4: 
+                    System.out.println("Adios!");
+                    break;
+                default:   
+                    System.out.println("Opcion no permitida.\nIntentalo de nuevo!");
+            }
+        } while(opcion != 4);
     }
 }
