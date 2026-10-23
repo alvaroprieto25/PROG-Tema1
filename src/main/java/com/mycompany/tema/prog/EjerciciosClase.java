@@ -4,6 +4,7 @@
  */
 package com.mycompany.tema.prog;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -27,6 +28,8 @@ public class EjerciciosClase {
         //ejercicio16(sc);
         //ejercicio17(sc);
         //ejercicio18(sc);
+        //ejercicio19();
+        ejercicio22(sc);
     }
     
     public static void ejercicio1() {
@@ -502,6 +505,79 @@ public class EjerciciosClase {
         }
         
         //Triangulo para el otro lado invertido
+        for(int i = tamano; i > 0; i--){
+            for(int j = 0; j < tamano; j++) {
+                if(j < i){
+                    System.out.print(" ");
+                } else {
+                    System.out.print("*");
+                }
+            }
+            System.out.println("");
+        }
+    }
+    
+    public static void ejercicio19(){
+        for(int i = 0 ; i < 20; i++){
+            if(i % 3 == 0){
+                continue;
+            } else if(i == 17) {
+                break;
+            }
+            
+            System.out.println(i);
+        }
+    }
+    
+    public static void ejercicio20(){
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Introduce un valor: ");
+            int valor = sc.nextInt();
+            sc.close();
+            int valor2 = sc.nextInt();
+        } catch(InputMismatchException | IllegalStateException e){
+            System.out.println(e.toString());
+            if(e.toString() == "java.util.InputMismatchException"){
+                System.out.println("Error: Debe introducir un numero entero valido");
+            } else {
+                System.out.println("Error: El Scanner esta cerrado");
+            }
+        }
+    }
+    
+    public static void ejercicio22(Scanner sc){
+        final double descuento = 15;
+        double importe = 0;
+        double recaudacionTotal = 0;
+        int clienteTotales = 0;
+        int edad;
+        System.out.println("--- BIENVENIDO AL SISTEMA ----");
+        do{
+            try{
+                System.out.println("---- NUEVO CLIENTE ----");
+                System.out.print("Introduce el importe: ");
+                importe = sc.nextDouble();
+                if(importe != 0){
+                    System.out.print("Introduce la edad: ");
+                    edad = sc.nextInt();
+                    if(edad < 21 || edad > 65){
+                        importe = importe * (1 - (descuento/100));
+                    }
+                    clienteTotales++;
+                    recaudacionTotal += importe;
+                    System.out.printf("El ticket del cliente es de: %.2f\n", importe);
+                }
+            } catch(InputMismatchException e){
+                System.out.println("El valor no es correcto");
+                sc.nextLine(); // Limpiar el buffer
+            }
+        }while(importe != 0);
         
+        
+        //Imprimir recaudacion
+        System.out.println("---- FIN DEL LISTADO ----");
+        System.out.printf("El total recaudado es de %.2f\n", recaudacionTotal);
+        System.out.printf("El numero total de clientes es de %d\n", clienteTotales);
     }
 }
